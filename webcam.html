@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận Diện Biển Báo Giao Thông</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling body */
+        body {
+            background-image: url('background.jpg') ;
+            background-size: cover; /* Ảnh sẽ bao phủ toàn bộ phần tử, cắt bỏ phần dư nếu cần */
+            background-position: center; /* Căn giữa ảnh */
+            background-repeat: no-repeat; /* Không lặp lại ảnh */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        header {
+        background-color: blue;
+            margin-top: -125px;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Webcam video frame */
+        .webcam-frame {
+            width: 640px;
+            height: 480px;
+            background-color: #ddd;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -25px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        Nhận Diện Biển Báo Giao Thông
+    </header>
+    
+    <div class="container">
+        <!-- Video Frame -->
+
+        <div class="webcam-frame">
+            <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>
